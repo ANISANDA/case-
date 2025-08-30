@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SOPE</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: #f6f6f6;
+      }
+      h1,
+      h2 {
+        color: #ff5722;
+      }
+      .divider {
+        height: 5px;
+        background: linear-gradient(to right, red, teal);
+        margin: 15px 0;
+        border-radius: 3px;
+      }
+
+      .container {
+        display: flex;
+        gap: 40px;
+        border-top: 3px solid #ccc;
+        padding-top: 20px;
+      }
+      .products,
+      .cart {
+        flex: 1;
+      }
+      .product,
+      .cart-item {
+        background: rgb(133, 205, 240);
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .product img,
+      .cart-item img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+      input {
+        margin: 5px;
+        padding: 5px;
+      }
+      button {
+        cursor: pointer;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+      }
+      button.add {
+        background: #ff9800;
+        color: white;
+      }
+      button.delete {
+        background: none;
+        color: black;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: auto;
+      }
+      button.cart {
+        background: #4caf50;
+        color: white;
+      }
+      .cart-item input[type="number"] {
+        width: 50px;
+        margin-left: 10px;
+      }
+      .container::before {
+        content: "";
+        position: absolute;
+        top: 150px;
+        bottom: 20px;
+        left: 50%;
+        width: 2px;
+        background: #ccc;
+      }
+
+      .container {
+        position: relative;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>🛒SOPE</h1>
+
+    <div class="divider"></div>
+
+    <h2>Thêm sản phẩm</h2>
+    <input id="name" placeholder="Tên sản phẩm" />
+    <input id="price" type="number" placeholder="Giá" />
+    <input id="image" placeholder="Link ảnh sản phẩm" />
+    <button onclick="addProduct()" class="add">Thêm</button>
+
+    <div class="divider"></div>
+
+    <div class="container">
+      <div class="products">
+        <h2>Danh sách sản phẩm</h2>
+        <div id="productList"></div>
+      </div>
+
+      <div class="cart">
+        <h2>Giỏ hàng</h2>
+        <div id="cartList"></div>
+        <button onclick="cart.clear()" class="delete">Xóa toàn bộ</button>
+      </div>
+    </div>
+    <script src="sản phẩm.js" defer></script>
+  </body>
+</html>
